@@ -1,0 +1,6 @@
+query GetProject($projectSlug: String!) {
+  project(where: {projectSlug: $projectSlug}) {
+    projectTitle
+    projectSlug
+  }
+}
