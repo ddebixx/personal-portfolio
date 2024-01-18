@@ -5,7 +5,7 @@ export const CarouselImages = async () => {
     const places = await getPlaces()
 
     return (
-        <div>
+        <div className="bg-[#1b2031] w-full h-full">
             {places.places.map((place) => (
                 <div>
                     {place.placeImage?.map((image) => (
