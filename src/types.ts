@@ -57,6 +57,8 @@ export type Asset = Entity & Node & {
   mimeType?: Maybe<Scalars['String']['output']>;
   placeImagePlace: Array<Place>;
   projectPhotoProject: Array<Project>;
+  projectTitlePhotoProject: Array<Project>;
+  projectsPhotosProject: Array<Project>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   /** User that last published this document */
@@ -66,6 +68,7 @@ export type Asset = Entity & Node & {
   size?: Maybe<Scalars['Float']['output']>;
   /** System stage field */
   stage: Stage;
+  technologyIconTechstack: Array<Techstack>;
   technologyImageTechstack: Array<Techstack>;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime']['output'];
@@ -185,6 +188,34 @@ export type AssetProjectPhotoProjectArgs = {
 
 
 /** Asset system model */
+export type AssetProjectTitlePhotoProjectArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<ProjectOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ProjectWhereInput>;
+};
+
+
+/** Asset system model */
+export type AssetProjectsPhotosProjectArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<ProjectOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<ProjectWhereInput>;
+};
+
+
+/** Asset system model */
 export type AssetPublishedAtArgs = {
   variation?: SystemDateTimeFieldVariation;
 };
@@ -207,6 +238,20 @@ export type AssetScheduledInArgs = {
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+/** Asset system model */
+export type AssetTechnologyIconTechstackArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<TechstackOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<TechstackWhereInput>;
 };
 
 
@@ -272,7 +317,10 @@ export type AssetCreateInput = {
   mimeType?: InputMaybe<Scalars['String']['input']>;
   placeImagePlace?: InputMaybe<PlaceCreateManyInlineInput>;
   projectPhotoProject?: InputMaybe<ProjectCreateManyInlineInput>;
+  projectTitlePhotoProject?: InputMaybe<ProjectCreateManyInlineInput>;
+  projectsPhotosProject?: InputMaybe<ProjectCreateManyInlineInput>;
   size?: InputMaybe<Scalars['Float']['input']>;
+  technologyIconTechstack?: InputMaybe<TechstackCreateManyInlineInput>;
   technologyImageTechstack?: InputMaybe<TechstackCreateManyInlineInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   width?: InputMaybe<Scalars['Float']['input']>;
@@ -386,6 +434,12 @@ export type AssetManyWhereInput = {
   projectPhotoProject_every?: InputMaybe<ProjectWhereInput>;
   projectPhotoProject_none?: InputMaybe<ProjectWhereInput>;
   projectPhotoProject_some?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_every?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_none?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_some?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_every?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_none?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_some?: InputMaybe<ProjectWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -405,6 +459,9 @@ export type AssetManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  technologyIconTechstack_every?: InputMaybe<TechstackWhereInput>;
+  technologyIconTechstack_none?: InputMaybe<TechstackWhereInput>;
+  technologyIconTechstack_some?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_every?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_none?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_some?: InputMaybe<TechstackWhereInput>;
@@ -469,7 +526,10 @@ export type AssetUpdateInput = {
   mimeType?: InputMaybe<Scalars['String']['input']>;
   placeImagePlace?: InputMaybe<PlaceUpdateManyInlineInput>;
   projectPhotoProject?: InputMaybe<ProjectUpdateManyInlineInput>;
+  projectTitlePhotoProject?: InputMaybe<ProjectUpdateManyInlineInput>;
+  projectsPhotosProject?: InputMaybe<ProjectUpdateManyInlineInput>;
   size?: InputMaybe<Scalars['Float']['input']>;
+  technologyIconTechstack?: InputMaybe<TechstackUpdateManyInlineInput>;
   technologyImageTechstack?: InputMaybe<TechstackUpdateManyInlineInput>;
   width?: InputMaybe<Scalars['Float']['input']>;
 };
@@ -733,6 +793,12 @@ export type AssetWhereInput = {
   projectPhotoProject_every?: InputMaybe<ProjectWhereInput>;
   projectPhotoProject_none?: InputMaybe<ProjectWhereInput>;
   projectPhotoProject_some?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_every?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_none?: InputMaybe<ProjectWhereInput>;
+  projectTitlePhotoProject_some?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_every?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_none?: InputMaybe<ProjectWhereInput>;
+  projectsPhotosProject_some?: InputMaybe<ProjectWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -767,6 +833,9 @@ export type AssetWhereInput = {
   size_not?: InputMaybe<Scalars['Float']['input']>;
   /** All values that are not contained in given list. */
   size_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']['input']>>>;
+  technologyIconTechstack_every?: InputMaybe<TechstackWhereInput>;
+  technologyIconTechstack_none?: InputMaybe<TechstackWhereInput>;
+  technologyIconTechstack_some?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_every?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_none?: InputMaybe<TechstackWhereInput>;
   technologyImageTechstack_some?: InputMaybe<TechstackWhereInput>;
@@ -2660,6 +2729,7 @@ export type MutationUpsertTechstackArgs = {
 
 export type MyLibrary = Entity & Node & {
   __typename?: 'MyLibrary';
+  bookAuthor?: Maybe<Scalars['String']['output']>;
   bookDescription: Scalars['String']['output'];
   bookImage: Asset;
   bookTitle: Scalars['String']['output'];
@@ -2754,6 +2824,7 @@ export type MyLibraryConnection = {
 };
 
 export type MyLibraryCreateInput = {
+  bookAuthor?: InputMaybe<Scalars['String']['input']>;
   bookDescription: Scalars['String']['input'];
   bookImage: AssetCreateOneInlineInput;
   bookTitle: Scalars['String']['input'];
@@ -2794,6 +2865,25 @@ export type MyLibraryManyWhereInput = {
   OR?: InputMaybe<Array<MyLibraryWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  bookAuthor?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  bookAuthor_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  bookAuthor_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  bookAuthor_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  bookAuthor_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  bookAuthor_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  bookAuthor_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  bookAuthor_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  bookAuthor_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  bookAuthor_starts_with?: InputMaybe<Scalars['String']['input']>;
   bookDescription?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
   bookDescription_contains?: InputMaybe<Scalars['String']['input']>;
@@ -2909,6 +2999,8 @@ export type MyLibraryManyWhereInput = {
 };
 
 export enum MyLibraryOrderByInput {
+  BookAuthorAsc = 'bookAuthor_ASC',
+  BookAuthorDesc = 'bookAuthor_DESC',
   BookDescriptionAsc = 'bookDescription_ASC',
   BookDescriptionDesc = 'bookDescription_DESC',
   BookTitleAsc = 'bookTitle_ASC',
@@ -2924,6 +3016,7 @@ export enum MyLibraryOrderByInput {
 }
 
 export type MyLibraryUpdateInput = {
+  bookAuthor?: InputMaybe<Scalars['String']['input']>;
   bookDescription?: InputMaybe<Scalars['String']['input']>;
   bookImage?: InputMaybe<AssetUpdateOneInlineInput>;
   bookTitle?: InputMaybe<Scalars['String']['input']>;
@@ -2947,6 +3040,7 @@ export type MyLibraryUpdateManyInlineInput = {
 };
 
 export type MyLibraryUpdateManyInput = {
+  bookAuthor?: InputMaybe<Scalars['String']['input']>;
   bookDescription?: InputMaybe<Scalars['String']['input']>;
   bookTitle?: InputMaybe<Scalars['String']['input']>;
 };
@@ -3010,6 +3104,25 @@ export type MyLibraryWhereInput = {
   OR?: InputMaybe<Array<MyLibraryWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']['input']>;
+  bookAuthor?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  bookAuthor_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  bookAuthor_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  bookAuthor_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  bookAuthor_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  bookAuthor_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  bookAuthor_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  bookAuthor_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  bookAuthor_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  bookAuthor_starts_with?: InputMaybe<Scalars['String']['input']>;
   bookDescription?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
   bookDescription_contains?: InputMaybe<Scalars['String']['input']>;
@@ -4166,10 +4279,15 @@ export type Project = Entity & Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID']['output'];
+  label: Array<Scalars['String']['output']>;
   projectDescription: RichText;
+  projectHero?: Maybe<Scalars['String']['output']>;
+  projectIdea?: Maybe<RichText>;
   projectPhoto: Asset;
   projectSlug?: Maybe<Scalars['String']['output']>;
   projectTitle: Scalars['String']['output'];
+  projectTitlePhoto?: Maybe<Asset>;
+  projectsPhotos: Array<Asset>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   /** User that last published this document */
@@ -4207,6 +4325,25 @@ export type ProjectHistoryArgs = {
 export type ProjectProjectPhotoArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
   locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type ProjectProjectTitlePhotoArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type ProjectProjectsPhotosArgs = {
+  after?: InputMaybe<Scalars['String']['input']>;
+  before?: InputMaybe<Scalars['String']['input']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<AssetOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  where?: InputMaybe<AssetWhereInput>;
 };
 
 
@@ -4252,10 +4389,15 @@ export type ProjectConnection = {
 
 export type ProjectCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   projectDescription: Scalars['RichTextAST']['input'];
+  projectHero?: InputMaybe<Scalars['String']['input']>;
+  projectIdea?: InputMaybe<Scalars['RichTextAST']['input']>;
   projectPhoto: AssetCreateOneInlineInput;
   projectSlug?: InputMaybe<Scalars['String']['input']>;
   projectTitle: Scalars['String']['input'];
+  projectTitlePhoto?: InputMaybe<AssetCreateOneInlineInput>;
+  projectsPhotos?: InputMaybe<AssetCreateManyInlineInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
@@ -4330,6 +4472,35 @@ export type ProjectManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  label_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  label_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  label_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  label_not?: InputMaybe<Array<Scalars['String']['input']>>;
+  projectHero?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  projectHero_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  projectHero_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  projectHero_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  projectHero_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  projectHero_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  projectHero_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  projectHero_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  projectHero_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  projectHero_starts_with?: InputMaybe<Scalars['String']['input']>;
   projectPhoto?: InputMaybe<AssetWhereInput>;
   projectSlug?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -4351,6 +4522,7 @@ export type ProjectManyWhereInput = {
   /** All values starting with the given string. */
   projectSlug_starts_with?: InputMaybe<Scalars['String']['input']>;
   projectTitle?: InputMaybe<Scalars['String']['input']>;
+  projectTitlePhoto?: InputMaybe<AssetWhereInput>;
   /** All values containing the given string. */
   projectTitle_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
@@ -4369,6 +4541,9 @@ export type ProjectManyWhereInput = {
   projectTitle_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   projectTitle_starts_with?: InputMaybe<Scalars['String']['input']>;
+  projectsPhotos_every?: InputMaybe<AssetWhereInput>;
+  projectsPhotos_none?: InputMaybe<AssetWhereInput>;
+  projectsPhotos_some?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -4411,6 +4586,10 @@ export enum ProjectOrderByInput {
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  LabelAsc = 'label_ASC',
+  LabelDesc = 'label_DESC',
+  ProjectHeroAsc = 'projectHero_ASC',
+  ProjectHeroDesc = 'projectHero_DESC',
   ProjectSlugAsc = 'projectSlug_ASC',
   ProjectSlugDesc = 'projectSlug_DESC',
   ProjectTitleAsc = 'projectTitle_ASC',
@@ -4422,10 +4601,15 @@ export enum ProjectOrderByInput {
 }
 
 export type ProjectUpdateInput = {
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   projectDescription?: InputMaybe<Scalars['RichTextAST']['input']>;
+  projectHero?: InputMaybe<Scalars['String']['input']>;
+  projectIdea?: InputMaybe<Scalars['RichTextAST']['input']>;
   projectPhoto?: InputMaybe<AssetUpdateOneInlineInput>;
   projectSlug?: InputMaybe<Scalars['String']['input']>;
   projectTitle?: InputMaybe<Scalars['String']['input']>;
+  projectTitlePhoto?: InputMaybe<AssetUpdateOneInlineInput>;
+  projectsPhotos?: InputMaybe<AssetUpdateManyInlineInput>;
 };
 
 export type ProjectUpdateManyInlineInput = {
@@ -4446,7 +4630,10 @@ export type ProjectUpdateManyInlineInput = {
 };
 
 export type ProjectUpdateManyInput = {
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   projectDescription?: InputMaybe<Scalars['RichTextAST']['input']>;
+  projectHero?: InputMaybe<Scalars['String']['input']>;
+  projectIdea?: InputMaybe<Scalars['RichTextAST']['input']>;
   projectTitle?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -4547,6 +4734,35 @@ export type ProjectWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  label_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  label_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  label_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  label_not?: InputMaybe<Array<Scalars['String']['input']>>;
+  projectHero?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  projectHero_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  projectHero_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  projectHero_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  projectHero_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  projectHero_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  projectHero_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  projectHero_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  projectHero_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  projectHero_starts_with?: InputMaybe<Scalars['String']['input']>;
   projectPhoto?: InputMaybe<AssetWhereInput>;
   projectSlug?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -4568,6 +4784,7 @@ export type ProjectWhereInput = {
   /** All values starting with the given string. */
   projectSlug_starts_with?: InputMaybe<Scalars['String']['input']>;
   projectTitle?: InputMaybe<Scalars['String']['input']>;
+  projectTitlePhoto?: InputMaybe<AssetWhereInput>;
   /** All values containing the given string. */
   projectTitle_contains?: InputMaybe<Scalars['String']['input']>;
   /** All values ending with the given string. */
@@ -4586,6 +4803,9 @@ export type ProjectWhereInput = {
   projectTitle_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   projectTitle_starts_with?: InputMaybe<Scalars['String']['input']>;
+  projectsPhotos_every?: InputMaybe<AssetWhereInput>;
+  projectsPhotos_none?: InputMaybe<AssetWhereInput>;
+  projectsPhotos_some?: InputMaybe<AssetWhereInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -6180,6 +6400,7 @@ export type Techstack = Entity & Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID']['output'];
+  label: Array<Scalars['String']['output']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']['output']>;
   /** User that last published this document */
@@ -6188,6 +6409,7 @@ export type Techstack = Entity & Node & {
   /** System stage field */
   stage: Stage;
   technologyDescription: Scalars['String']['output'];
+  technologyIcon?: Maybe<Asset>;
   technologyImage?: Maybe<Asset>;
   technologyTitle: Scalars['String']['output'];
   /** The time the document was updated */
@@ -6235,6 +6457,12 @@ export type TechstackScheduledInArgs = {
 };
 
 
+export type TechstackTechnologyIconArgs = {
+  forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
 export type TechstackTechnologyImageArgs = {
   forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
   locales?: InputMaybe<Array<Locale>>;
@@ -6265,7 +6493,9 @@ export type TechstackConnection = {
 
 export type TechstackCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   technologyDescription: Scalars['String']['input'];
+  technologyIcon?: InputMaybe<AssetCreateOneInlineInput>;
   technologyImage?: InputMaybe<AssetCreateOneInlineInput>;
   technologyTitle: Scalars['String']['input'];
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -6342,6 +6572,16 @@ export type TechstackManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  label_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  label_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  label_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  label_not?: InputMaybe<Array<Scalars['String']['input']>>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -6380,6 +6620,7 @@ export type TechstackManyWhereInput = {
   technologyDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   technologyDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
+  technologyIcon?: InputMaybe<AssetWhereInput>;
   technologyImage?: InputMaybe<AssetWhereInput>;
   technologyTitle?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -6423,6 +6664,8 @@ export enum TechstackOrderByInput {
   CreatedAtDesc = 'createdAt_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  LabelAsc = 'label_ASC',
+  LabelDesc = 'label_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
   TechnologyDescriptionAsc = 'technologyDescription_ASC',
@@ -6434,7 +6677,9 @@ export enum TechstackOrderByInput {
 }
 
 export type TechstackUpdateInput = {
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   technologyDescription?: InputMaybe<Scalars['String']['input']>;
+  technologyIcon?: InputMaybe<AssetUpdateOneInlineInput>;
   technologyImage?: InputMaybe<AssetUpdateOneInlineInput>;
   technologyTitle?: InputMaybe<Scalars['String']['input']>;
 };
@@ -6457,6 +6702,7 @@ export type TechstackUpdateManyInlineInput = {
 };
 
 export type TechstackUpdateManyInput = {
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
   technologyDescription?: InputMaybe<Scalars['String']['input']>;
   technologyTitle?: InputMaybe<Scalars['String']['input']>;
 };
@@ -6558,6 +6804,16 @@ export type TechstackWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  label?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  label_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  label_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  label_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  label_not?: InputMaybe<Array<Scalars['String']['input']>>;
   publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -6596,6 +6852,7 @@ export type TechstackWhereInput = {
   technologyDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
   /** All values starting with the given string. */
   technologyDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
+  technologyIcon?: InputMaybe<AssetWhereInput>;
   technologyImage?: InputMaybe<AssetWhereInput>;
   technologyTitle?: InputMaybe<Scalars['String']['input']>;
   /** All values containing the given string. */
@@ -7155,7 +7412,7 @@ export enum _SystemDateTimeFieldVariation {
 export type GetBooksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetBooksQuery = { __typename?: 'Query', myLibraries: Array<{ __typename?: 'MyLibrary', bookTitle: string }> };
+export type GetBooksQuery = { __typename?: 'Query', myLibraries: Array<{ __typename?: 'MyLibrary', bookTitle: string, bookAuthor?: string | null, bookDescription: string, bookImage: { __typename?: 'Asset', url: string } }> };
 
 export type GetPlacesQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7167,17 +7424,17 @@ export type GetProjectQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null } | null };
+export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectHero?: string | null, projectTitlePhoto?: { __typename?: 'Asset', url: string } | null, projectsPhotos: Array<{ __typename?: 'Asset', url: string }>, projectDescription: { __typename?: 'RichText', html: string }, projectIdea?: { __typename?: 'RichText', html: string } | null } | null };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', projectTitle: string, projectSlug?: string | null }> };
+export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectPhoto: { __typename?: 'Asset', url: string } }> };
 
 export type GetTechQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTechQuery = { __typename?: 'Query', techstacks: Array<{ __typename?: 'Techstack', technologyTitle: string }> };
+export type GetTechQuery = { __typename?: 'Query', techstacks: Array<{ __typename?: 'Techstack', technologyTitle: string, technologyDescription: string, label: Array<string>, technologyImage?: { __typename?: 'Asset', url: string } | null, technologyIcon?: { __typename?: 'Asset', url: string } | null }> };
 
 
       export type PossibleTypesResultData = {

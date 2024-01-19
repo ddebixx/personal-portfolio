@@ -6,13 +6,18 @@ const defaultOptions = {} as const;
 export type GetBooksQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetBooksQuery = { __typename?: 'Query', myLibraries: Array<{ __typename?: 'MyLibrary', bookTitle: string }> };
+export type GetBooksQuery = { __typename?: 'Query', myLibraries: Array<{ __typename?: 'MyLibrary', bookTitle: string, bookAuthor?: string | null, bookDescription: string, bookImage: { __typename?: 'Asset', url: string } }> };
 
 
 export const GetBooksDocument = gql`
     query GetBooks {
   myLibraries {
     bookTitle
+    bookAuthor
+    bookDescription
+    bookImage {
+      url
+    }
   }
 }
     `;

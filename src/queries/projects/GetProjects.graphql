@@ -2,5 +2,9 @@ query GetProjects {
   projects {
     projectTitle
     projectSlug
+    projectPhoto {
+      url
+    }
+    label
   }
 }

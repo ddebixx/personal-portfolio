@@ -2,5 +2,19 @@ query GetProject($projectSlug: String!) {
   project(where: {projectSlug: $projectSlug}) {
     projectTitle
     projectSlug
+    label
+    projectHero
+    projectTitlePhoto {
+      url
+    }
+    projectsPhotos {
+      url
+    }
+    projectDescription {
+      html
+    }
+    projectIdea {
+      html
+    }
   }
 }

@@ -6,13 +6,21 @@ const defaultOptions = {} as const;
 export type GetTechQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetTechQuery = { __typename?: 'Query', techstacks: Array<{ __typename?: 'Techstack', technologyTitle: string }> };
+export type GetTechQuery = { __typename?: 'Query', techstacks: Array<{ __typename?: 'Techstack', technologyTitle: string, technologyDescription: string, label: Array<string>, technologyImage?: { __typename?: 'Asset', url: string } | null, technologyIcon?: { __typename?: 'Asset', url: string } | null }> };
 
 
 export const GetTechDocument = gql`
     query GetTech {
   techstacks {
     technologyTitle
+    technologyImage {
+      url
+    }
+    technologyIcon {
+      url
+    }
+    technologyDescription
+    label
   }
 }
     `;

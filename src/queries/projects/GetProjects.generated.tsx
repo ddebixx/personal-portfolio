@@ -6,7 +6,7 @@ const defaultOptions = {} as const;
 export type GetProjectsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', projectTitle: string, projectSlug?: string | null }> };
+export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectPhoto: { __typename?: 'Asset', url: string } }> };
 
 
 export const GetProjectsDocument = gql`
@@ -14,6 +14,10 @@ export const GetProjectsDocument = gql`
   projects {
     projectTitle
     projectSlug
+    projectPhoto {
+      url
+    }
+    label
   }
 }
     `;

@@ -2,11 +2,9 @@
 
 import Image from "next/image"
 
-
-
 export const HeroSection = () => {
     return (
-        <div className="h-screen flex justify-between items-center">
+        <div className="relative h-screen flex justify-between items-center">
             <div className="w-full flex flex-col gap-4">
                 <h1 className="text-7xl font-mono">Hi!I'm <br /> <span className="bg-gradient-to-b from-[#A0AAC4] to-[#9CA7C2] font-bold text-transparent bg-clip-text capitalize">Andrew Naida</span></h1>
                 <h2 className="text-2xl text-white/50 font-thin font-sans tracking-wide">Ambitious frontend developer</h2>

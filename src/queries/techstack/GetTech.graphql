@@ -1,5 +1,13 @@
 query GetTech {
     techstacks {
         technologyTitle
+        technologyImage {
+            url
+        }
+        technologyIcon {
+            url
+        }
+        technologyDescription
+        label
     }
 }

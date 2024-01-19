@@ -1,5 +1,10 @@
 query GetBooks {
     myLibraries {
-        bookTitle
+    bookTitle
+    bookAuthor
+    bookDescription
+    bookImage {
+      url
     }
+  }
 }
