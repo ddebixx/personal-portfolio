@@ -56,9 +56,9 @@ export default function Contact() {
                                 type="text"
                                 placeholder="Full Name"
                                 autoComplete="false"
-                                className={`w-full px-4 py-3 border-[1px] placeholder:text-gray-800 dark:text-white rounded-xl outline-none dark:placeholder:text-gray-200 dark:bg-[#131625]  focus:ring-0  ${errors.name
-                                    ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                                className={`w-full px-4 py-3 border-[1px] placeholder:text-white/70 text-white rounded-xl outline-none bg-[#131625]  focus:ring-0  ${errors.name
+                                    ? "border-red-600 focus:border-red-600 ring-red-100 ring-0"
+                                    : "border-white/10 ring-gray-100 focus:border-white/50 ring-0"
                                     }`}
                                 {...register("name", {
                                     required: "Full name is required",
@@ -81,9 +81,9 @@ export default function Contact() {
                                 type="email"
                                 placeholder="Email Address"
                                 autoComplete="false"
-                                className={`w-full px-4 py-3 border-[1px] placeholder:text-gray-800 dark:text-white rounded-xl outline-none dark:placeholder:text-gray-200 dark:bg-[#131625]   focus:ring-0  ${errors.email
-                                    ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                                className={`w-full px-4 py-3 border-[1px] placeholder:text-white/70 text-white rounded-xl outline-none bg-[#131625]   focus:ring-0  ${errors.email
+                                    ? "border-red-600 focus:border-red-600 ring-red-100 ring-0"
+                                    : "border-white/10 ring-gray-100  focus:border-white/50 ring-0"
                                     }`}
                                 {...register("email", {
                                     required: "Enter your email",
@@ -103,9 +103,9 @@ export default function Contact() {
                         <div className="mb-3">
                             <textarea
                                 placeholder="Your Message"
-                                className={`w-full px-4 py-3 border-[1px] placeholder:text-gray-800 dark:text-white dark:placeholder:text-gray-200 dark:bg-[#131625] rounded-xl outline-none h-96 focus:ring-0 focus:outline-none ${errors.message
-                                    ? "border-red-600 focus:border-red-600 ring-red-100 dark:ring-0"
-                                    : "border-gray-300 focus:border-gray-600 ring-gray-100 dark:border-gray-600 dark:focus:border-white dark:ring-0"
+                                className={`w-full px-4 py-3 border-[1px] placeholder:text-white/70 text-white bg-[#131625] rounded-xl outline-none h-96 focus:ring-0 focus:outline-none ${errors.message
+                                    ? "border-red-600 focus:border-red-600 ring-red-100 ring-0"
+                                    : "border-white/10 ring-gray-100  focus:border-white/50 ring-0"
                                     }`}
                                 {...register("message", {
                                     required: "Enter your Message",
@@ -121,10 +121,10 @@ export default function Contact() {
 
                         <button
                             type="submit"
-                            className="w-full py-4 font-semibold text-white transition-colors bg-gradient-to-b from-[#e0e0e0] to-[#8B96B1] rounded-xl hover:bg-[#131625] focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 dark:bg-white dark:text-black ">
+                            className="w-full py-4 font-semibold text-black transition-colors bg-gradient-to-b from-[#e0e0e0] to-[#8B96B1] rounded-xl hover:bg-[#131625] focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 px-7 ">
                             {isSubmitting ? (
                                 <svg
-                                    className="w-5 h-5 mx-auto text-white dark:text-black animate-spin"
+                                    className="w-5 h-5 mx-auto text-black animate-spin"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24">
