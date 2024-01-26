@@ -19,7 +19,7 @@ export default function Home() {
         <ProjectsCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <AboutMeCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <TechstackCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] overflow-hidden hover:scale max-[768px]:min-h-[280px] transition' />
-        <VisitedPlace className='flex flex-col items-start col-span-1 overflow-hidden w-full relative border-white/20 hover:scale-105 transition max-[768px]:min-h-[280px]' />
+        <VisitedPlace className='flex flex-col items-start col-span-1 w-full relative border-white/20 hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <FoundationCard className='flex flex-col items-center justify-center col-span-2 border-white/20 max-[600px]:col-span-1 hover:scale-105 transition max-[768px]:row-span-2 max-[768px]:min-h-[280px]' />
         <ContactCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <SocialCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />

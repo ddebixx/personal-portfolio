@@ -29,7 +29,7 @@ export default function AboutMePage() {
                         I mostly do street photography but I also love to make portrait photoshoots and show people how beautiful they are.
                     </p>
                 </div>
-                <div className="max-[768px]:rounded-full max-[768px]:overflow-hidden max-[768px]:h-[400px] max-[1024px]:w-[50%] max-[768px]:self-center">
+                <div className="max-[768px]:rounded-full max-[768px]:overflow-hidden max-[768px]:h-[400px] max-[1024px]:w-[50%] max-[768px]:self-center max-[600px]:w-full">
                     <Image className="object-cover rounded-[72px] min-w-[300px]" src="/me.jpg" alt="" width={500} height={400} />
                 </div>
             </div>

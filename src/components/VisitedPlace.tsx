@@ -34,7 +34,7 @@ export const VisitedPlace = ({ className }: VisitedPlaceProps) => {
                 <div className="relative bg-[#1b2031] w-full h-full rounded-[72px] overflow-hidden max-[768px]:rounded-3xl">
                     <div className='absolute top-0 w-full py-16 bg-black/30 blur-lg z-10'></div>
                     <div className='absolute top-8 left-1/2 transform -translate-x-1/2 z-10 w-full text-center max-[768px]:top-4'>
-                        <h1 className='z-[2222] text-xl text-white relative font-mono'>Recently visited place</h1>
+                        <h1 className='z-20 text-xl text-white relative font-mono'>Recently visited place</h1>
                         <p className="text-lg text-white/50">{placeName}</p>
                     </div>
                     <Swiper className='w-full h-full'
