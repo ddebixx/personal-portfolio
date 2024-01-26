@@ -1,0 +1,27 @@
+.project a {
+    display: block;
+    width: fit-content;
+    padding: .5rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 1rem;
+    background: linear-gradient(to bottom, #e0e0e0, #8B96B1);
+    border-radius: 0.5rem;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.project a:hover {
+    background-color: #131625;
+}
+
+.project a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #D1D5DB;
+}
+
+@media (prefers-color-scheme: dark) {
+    .project a {
+        background-color: white;
+        color: black;
+    }
+}

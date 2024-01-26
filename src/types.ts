@@ -4295,6 +4295,7 @@ export type Project = Entity & Node & {
   scheduledIn: Array<ScheduledOperation>;
   /** System stage field */
   stage: Stage;
+  techStack: Array<Scalars['String']['output']>;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime']['output'];
   /** User that last updated this document */
@@ -4398,6 +4399,7 @@ export type ProjectCreateInput = {
   projectTitle: Scalars['String']['input'];
   projectTitlePhoto?: InputMaybe<AssetCreateOneInlineInput>;
   projectsPhotos?: InputMaybe<AssetCreateManyInlineInput>;
+  techStack?: InputMaybe<Array<Scalars['String']['input']>>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
 };
 
@@ -4563,6 +4565,16 @@ export type ProjectManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  techStack?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  techStack_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  techStack_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  techStack_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  techStack_not?: InputMaybe<Array<Scalars['String']['input']>>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -4596,6 +4608,8 @@ export enum ProjectOrderByInput {
   ProjectTitleDesc = 'projectTitle_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
+  TechStackAsc = 'techStack_ASC',
+  TechStackDesc = 'techStack_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
@@ -4610,6 +4624,7 @@ export type ProjectUpdateInput = {
   projectTitle?: InputMaybe<Scalars['String']['input']>;
   projectTitlePhoto?: InputMaybe<AssetUpdateOneInlineInput>;
   projectsPhotos?: InputMaybe<AssetUpdateManyInlineInput>;
+  techStack?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type ProjectUpdateManyInlineInput = {
@@ -4635,6 +4650,7 @@ export type ProjectUpdateManyInput = {
   projectHero?: InputMaybe<Scalars['String']['input']>;
   projectIdea?: InputMaybe<Scalars['RichTextAST']['input']>;
   projectTitle?: InputMaybe<Scalars['String']['input']>;
+  techStack?: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
 export type ProjectUpdateManyWithNestedWhereInput = {
@@ -4825,6 +4841,16 @@ export type ProjectWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  techStack?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  techStack_contains_all?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  techStack_contains_none?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  techStack_contains_some?: InputMaybe<Array<Scalars['String']['input']>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  techStack_not?: InputMaybe<Array<Scalars['String']['input']>>;
   updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -7424,7 +7450,7 @@ export type GetProjectQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectHero?: string | null, projectTitlePhoto?: { __typename?: 'Asset', url: string } | null, projectsPhotos: Array<{ __typename?: 'Asset', url: string }>, projectDescription: { __typename?: 'RichText', html: string }, projectIdea?: { __typename?: 'RichText', html: string } | null } | null };
+export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectHero?: string | null, techStack: Array<string>, projectTitlePhoto?: { __typename?: 'Asset', url: string } | null, projectsPhotos: Array<{ __typename?: 'Asset', url: string }>, projectDescription: { __typename?: 'RichText', html: string }, projectIdea?: { __typename?: 'RichText', html: string } | null } | null };
 
 export type GetProjectsQueryVariables = Exact<{ [key: string]: never; }>;
 

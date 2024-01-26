@@ -8,7 +8,7 @@ export type GetProjectQueryVariables = Types.Exact<{
 }>;
 
 
-export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectHero?: string | null, projectTitlePhoto?: { __typename?: 'Asset', url: string } | null, projectsPhotos: Array<{ __typename?: 'Asset', url: string }>, projectDescription: { __typename?: 'RichText', html: string }, projectIdea?: { __typename?: 'RichText', html: string } | null } | null };
+export type GetProjectQuery = { __typename?: 'Query', project?: { __typename?: 'Project', projectTitle: string, projectSlug?: string | null, label: Array<string>, projectHero?: string | null, techStack: Array<string>, projectTitlePhoto?: { __typename?: 'Asset', url: string } | null, projectsPhotos: Array<{ __typename?: 'Asset', url: string }>, projectDescription: { __typename?: 'RichText', html: string }, projectIdea?: { __typename?: 'RichText', html: string } | null } | null };
 
 
 export const GetProjectDocument = gql`
@@ -18,6 +18,7 @@ export const GetProjectDocument = gql`
     projectSlug
     label
     projectHero
+    techStack
     projectTitlePhoto {
       url
     }

@@ -4,6 +4,7 @@ query GetProject($projectSlug: String!) {
     projectSlug
     label
     projectHero
+    techStack
     projectTitlePhoto {
       url
     }
