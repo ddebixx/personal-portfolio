@@ -8,22 +8,24 @@ import Image from 'next/image';
 export const Navbar = () => {
     const [showLinks, setShowLinks] = useState(false);
 
+    const toggleNavbar = () => {
+        setShowLinks(!showLinks);
+    };
+
     return (
         <>
             <nav className="flex items-center gap-4 fixed top-8 z-[22222222] cursor-pointer"
-                onMouseEnter={() => setShowLinks(true)}>
-                <Link href='/'>
-                    <div className='flex gap-4 items-center w-full'>
-                        <div className="w-12 h-12 bg-gradient-to-t from-[#D3D2D4] to-[#CAC9CA] rounded-full flex items-center justify-center">
-                            <Image src="/map-pin.png" className="object-cover" alt="hero" width={2000} height={1500} />
-                        </div>
-                        <p className='uppercase font-semibold tracking-wider text-white/90 font-mono'>Andrew</p>
-                        <Menu className="text-white/70 text-2xl" />
+                onClick={toggleNavbar}>
+                <div className='flex gap-4 items-center w-full'>
+                    <div className="w-12 h-12 bg-gradient-to-t from-[#D3D2D4] to-[#CAC9CA] rounded-full flex items-center justify-center">
+                        <Image src="/map-pin.png" className="object-cover" alt="hero" width={2000} height={1500} />
                     </div>
-                </Link>
+                    <p className='uppercase font-semibold tracking-wider text-white/90 font-mono'>Andrew</p>
+                    <Menu className="text-white/70 text-2xl" />
+                </div>
             </nav>
             <div className={`fixed left-0 right-0 top-4 m-auto p-[1px] bg-gradient-to-b from-[#FEFEFE]/30 to-[#8B96B1]/30 rounded-3xl w-fit overflow-hidden transition-all duration-500 ease-in-out ${showLinks ? 'opacity-100 visible' : 'opacity-0 invisible scale-50 transition duration-500'}`}
-                onMouseLeave={() => setShowLinks(false)}>
+                onClick={toggleNavbar}>
                 <div className={`relative grid grid-cols-1 items-center justify-center gap-2 w-full p-8 bg-gradient-to-b from-[#262B36] to-[#1A1D25] rounded-3xl min-[768px]:flex-row min-[768px]:flex-wrap`}>
                     <div className='border-[1px] border-white/20 rounded-3xl mt-16 w-full'>
                         <Link className='text-white flex flex-col gap-2 items-center justify-center w-full p-4 bg-[#2A2E38] rounded-3xl hover:shadow-2xl hover:-translate-y-1 transition' href='/'>
