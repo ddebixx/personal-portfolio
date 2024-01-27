@@ -26,7 +26,7 @@ export default async function ProjectsPage() {
                                             <div className="flex gap-4">
                                                 {project.label.map((label) => (
                                                     <p key={label}
-                                                        className={`text-xs text-white p-1 rounded-md border-[1px] uppercase font-mono 
+                                                        className={`text-white p-1 rounded-md border-[1px] uppercase font-mono max-[768px]:p-1 max-[768px]:text-xs z-[10]
                         ${label === 'web-site' ? 'bg-red-300/70 border-red-400' : 'bg-blue-200/10'}`}
                                                     >
                                                         {label}
