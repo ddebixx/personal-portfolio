@@ -64,14 +64,14 @@ export const Navbar = () => {
                         </div>
                         <div className='border-[1px] border-white/20 rounded-3xl'
                             onClick={toggleNavbar}>
-                            <Link className='text-white flex flex-col gap-2 items-center justify-center w-32 h-32 bg-[#2A2E38] rounded-3xl hover:shadow-2xl hover:-translate-y-1 transition' href='/https://www.instagram.com/debix.cr2/'>
+                            <Link className='text-white flex flex-col gap-2 items-center justify-center w-32 h-32 bg-[#2A2E38] rounded-3xl hover:shadow-2xl hover:-translate-y-1 transition' href='https://www.instagram.com/debix.cr2/'>
                                 <Instagram size={40} className='text-[#191930] text-[40px] p-2 bg-gradient-to-b from-[#FEFEFF] to-[#8792ad] rounded-lg shadow-[0_0_15px_5px_rgba(135,146,173,0.3)]' />
                                 <p className='font-mono'>Instagram</p>
                             </Link>
                         </div>
                         <div className='border-[1px] border-white/20 rounded-3xl'
                             onClick={toggleNavbar}>
-                            <Link className='text-white flex flex-col gap-2 items-center justify-center w-32 h-32 bg-[#2A2E38] rounded-3xl hover:shadow-2xl hover:-translate-y-1 transition' href='/https://github.com/ddebixx'>
+                            <Link className='text-white flex flex-col gap-2 items-center justify-center w-32 h-32 bg-[#2A2E38] rounded-3xl hover:shadow-2xl hover:-translate-y-1 transition' href='https://www.github.com/ddebixx'>
                                 <Code1 size={40} className='text-[#191930] text-[40px] p-2 bg-gradient-to-b from-[#FEFEFF] to-[#8792ad] rounded-lg shadow-[0_0_15px_5px_rgba(135,146,173,0.3)]' />
                                 <p className='font-mono'>GitHub</p>
                             </Link>
