@@ -8,9 +8,9 @@ export default async function TechstackPage() {
         <div className='grid grid-cols-3 w-full gap-16 max-[1024px]:grid-cols-2 max-[600px]:grid-cols-1 min-h-screen mt-32'>
             {tech.techstacks.map((tech) => (
                 <div key={tech.technologyTitle} 
-                className="mt-32 p-[1px] bg-gradient-to-b h-[450px] from-[#FEFEFE]/30 to-[#8B96B1]/30 overflow-hidden flex flex-col items-center justify-center gap-4 col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition">
-                    <div className="bg-[#1b2031] w-full h-full relative flex flex-col items-center justify-start">
-                        <div className="flex flex-col items-center gap-4 mt-8">
+                className="mt-32 p-[1px] bg-gradient-to-b h-[450px] from-[#FEFEFE]/30 to-[#8B96B1]/30 overflow-hidden rounded-[72px] flex flex-col items-center justify-center gap-4 col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:rounded-3xl">
+                    <div className="bg-[#1b2031] w-full h-full relative flex flex-col items-center justify-start rounded-[72px] max-[768px]:rounded-3xl">
+                        <div className="flex flex-col items-center gap-4 mt-8 px-4">
                             <div className="flex flex-col items-center text-center">
                                 <Image src={tech.technologyIcon?.url as any} width={100} height={100} alt="" />
                                 <h1 className="text-3xl font-mono">{tech.technologyTitle}</h1>
