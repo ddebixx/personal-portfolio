@@ -18,7 +18,7 @@ export default function Home() {
         <LocationCard className='flex flex-col items-center justify-center row-span-2 col-span-1 hover:scale-105 transition max-[768px]:rounded-sm max-[768px]:min-h-[280px] max-[500px]:row-span-1' />
         <ProjectsCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <AboutMeCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
-        <TechstackCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] overflow-hidden hover:scale max-[768px]:min-h-[280px] transition' />
+        <TechstackCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] overflow-hidden hover:scale-105 max-[768px]:min-h-[280px] transition' />
         <VisitedPlace className='flex flex-col items-start col-span-1 w-full relative border-white/20 hover:scale-105 transition max-[768px]:min-h-[280px]' />
         <FoundationCard className='flex flex-col items-center justify-center col-span-2 border-white/20 max-[600px]:col-span-1 hover:scale-105 transition max-[768px]:row-span-2 max-[768px]:min-h-[280px]' />
         <ContactCard className='flex flex-col items-center justify-center col-span-1 border-white/20 min-h-[320px] hover:scale-105 transition max-[768px]:min-h-[280px]' />
